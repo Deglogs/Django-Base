@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #020202;
+            }
+        tr:hover {background-color: #addee9;}
+        h1{text-align: center;}
+           
+    </style>
+</head>
+<body>
+    <h1>Results searched from "{{fav_movie}}"</h1>
+    <br>
+    <table>
+        <tr >
+          <th>Title</th>
+          <th>Year</th>
+          <th>Type</th>
+        </tr>
+        {% for movie in movies %}
+        <tr>
+          <td>{{movie.Title}}</td>
+          <td>{{movie.Year}}</td>
+          <td>{{movie.Type}}</td>
+          <td><img src="{{movie.Poster}}" alt="{{movie.Title}}"></td>
+        </tr>
+        {% endfor %}
+      </table>
+    <br><br>
+    <a href="/toystory/">Movie Details</a>
+</body>
+</html>
